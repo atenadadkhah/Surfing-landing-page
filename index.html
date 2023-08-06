@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Surfing</title>
+    <link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        semiblack: '#0b0c1',
+                        lightblue: '#5da8ef',
+                        lightgray: '#8f8f8f',
+                        midgray: '#7a7a7a',
+                        darkgray: '#333333',
+                        cream: '#ececec',
+                        pink: '#ce60a8',
+                        light: '#f9f9f9'
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        league: ['League Spartan', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-semiblack font-league">
+<header class="relative w-full">
+    <!-- Navbar-->
+    <nav class="container px-12 lg:px-24 py-8">
+        <div class="flex items-center justify-between md:justify-start">
+            <!-- Logo -->
+            <div class="logo w-1/5">
+                <img src="images/logo.png" alt="surfing-logo">
+            </div>
+            <!-- Menu Items -->
+            <div class="hidden items-center space-x-8 uppercase md:flex text-[.7em] font-semibold font-league">
+                <a href="#stories" class="p-4 tracking-[5px] duration-200 hover:text-midgray">stories</a>
+                <a href="#events" class="p-4 tracking-[5px] duration-200 hover:text-midgray">events</a>
+                <a href="#places" class="p-4 tracking-[5px] duration-200 hover:text-midgray">places</a>
+                <a href="#boards" class="p-4 tracking-[5px] duration-200 hover:text-midgray">boards</a>
+            </div>
+            <!-- Hamburger Button -->
+            <button
+                    id="menu-btn"
+                    class="z-30 block md:hidden focus:outline-none hamburger"
+            >
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+            </button>
+            <!-- Mobile Menu -->
+            <div
+                    id="menu"
+                    class="fixed inset-0 z-20 font-bold hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-white"
+            >
+                <div class="w-full py-3 text-center">
+                    <a href="#stories" class="p-4 tracking-[5px] text-darkgray">stories</a>
+                </div>
+                <div class="w-full py-3 text-center">
+                    <a href="#events" class="p-4 tracking-[5px] text-darkgray">events</a>
+                </div>
+                <div class="w-full py-3 text-center">
+                    <a href="#places" class="p-4 tracking-[5px] text-darkgray">places</a>
+                </div>
+                <div class="w-full py-3 text-center">
+                    <a href="#boards" class="p-4 tracking-[5px] text-darkgray">boards</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero -->
+    <section id="hero" class="px-12 lg:px-24 mt-10 lg:mt-0">
+        <div class="container flex flex-col lg:flex-row lg:items-center lg:justify-between">
+            <!-- Content -->
+            <div class="flex flex-col lg:absolute z-10 space-y-5 lg:w-1/2">
+                <span class="uppercase text-xs tracking-[5px] text-lightblue font-league font-bold">your</span>
+                <h1 class="font-playfair font-black text-4xl md:text-5xl lg:text-6xl ">
+                    Beautiful Escape
+                </h1>
+                <p class="max-w-sm font-thin text-lightgray text-lg lg:mt-0 lg:mx-0">
+                    One of the greatest things about the sport of surfing is that you need only three things: your body,
+                    a surfboard, and a wave.
+                </p>
+            </div>
+            <!-- Slider control -->
+            <div id="hero-slider-control" class="flex items-center absolute bottom-0 z-10">
+                <span class="p-2 text-sm">
+                    <span id="slider-current-page" class="text-lightblue"></span>
+                    /
+                    <span id="slider-total-page"></span>
+                </span>
+            </div>
+            <!-- Slider -->
+            <div id="hero-slider"
+                 class="my-10 lg:my-0 relative z-0 w-11/12 !flex lg:justify-end lg:left-full lg:translate-x-[-100%]">
+                <img src="images/hero-slider/hero-slide-1.png" alt="hero slide 1">
+                <img src="images/hero-slider/hero-slide-2.png" alt="hero slide 2">
+                <img src="images/hero-slider/hero-slide-3.png" alt="hero slide 3">
+            </div>
+        </div>
+    </section>
+    <div class="hidden lg:block absolute right-12 top-12 text-xs tracking-[4px] uppercase text-lightgray rotate-180 [writing-mode:vertical-rl]">
+        First Surfing Magazine
+    </div>
+    <div class="hidden absolute bottom-0 right-12 lg:flex flex-col space-y-6 justify-center">
+        <a href="#" target="_blank"><img src="images/social-icons/tumblr.png" alt="tumblr"></a>
+        <a href="#" target="_blank"><img src="images/social-icons/twitter.png" alt="twitter"></a>
+        <a href="#" target="_blank"><img src="images/social-icons/vimeo.png" alt="vimeo"></a>
+    </div>
+</header>
+<section class="pt-12 lg:pt-24 px-4">
+    <div class="max-w-lg mx-auto container flex flex-col">
+        <h2 class="text-2xl font-playfair text-darkgray text-center">Surfing is the most blissful experience you can
+            have
+            on this planet, a taste of heaven.</h2>
+        <span class="text-center text-darkgray tracking-[4px] text-xs uppercase font-bold mt-6 mb-12">John McCarthy</span>
+        <div class="w-0.5 h-24 bg-lightblue mx-auto"></div>
+    </div>
+</section>
+<section class="px-12 lg:px-24 py-16">
+    <div class="flex flex-col md:flex-row relative space-y-10 ">
+        <div class="flex flex-col md:w-1/2">
+            <img src="images/img-1.png" alt="image 1">
+            <div class="max-w-xs  xl:max-w-md lg:pl-12 xl:pl-24">
+                <p class=" py-6 lg:py-12 text-lightgray">By better understanding the various aspects of surfing, you
+                    will improve
+                    faster and have more fun in the water.</p>
+                <a href="#" class="py-2 uppercase text-xs tracking-[4px] font-bold border-b-2 border-lightblue">read
+                    more</a>
+            </div>
+        </div>
+        <div class="md:absolute flex justify-end md:w-7/12 xl:w-2/3 top-3 md:left-full md:translate-x-[-100%]">
+            <div class="relative">
+                <img src="images/img-2.png" alt="image 2">
+                <div class="cursor-pointer absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+                    <img src="images/player.png" alt="">
+                    <img class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
+                         src="images/player-tri.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Surfboards -->
+<section
+        style="background: linear-gradient(#fff 10%, transparent 25%, transparent 100%) , url('images/backgrounds/bg-1.png') no-repeat center center / cover">
+    <div class="py-32">
+        <div class="flex flex-col justify-center items-center">
+            <span class="uppercase text-xs tracking-[5px] text-lightblue font-league font-bold">shop</span>
+            <h3 class="font-playfair font-black text-center text-4xl">
+                Surfboards
+            </h3>
+        </div>
+
+        <div class="flex justify-between items-center relative" id="surfboard-slider-container">
+            <div id="surfboard-slider" class="w-full pl-6 lg:pl-24">
+                <div class="surfboard-slider !flex items-center justify-center lg:justify-start">
+                    <img style="background: linear-gradient(to top, #ececec 65%, transparent 65%)"
+                         src="images/surfboards/surfboard-1.png" alt="surfboard-1">
+                    <div class="whitespace-nowrap relative right-7 top-16">
+                        <span class="text-midgray text-xs tracking-[3px] uppercase">Funboards</span>
+                        <h4 class="font-playfair text-xl">Chilli Rare Bird</h4>
+                        <div class="flex flex-col text-center pt-6">
+                            <span class="text-pink">$890</span>
+                            <a href="#" class="font-bold text-xs tracking-[3px] uppercase">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="surfboard-slider !flex items-center justify-center lg:justify-start">
+                    <img style="background: linear-gradient(to top, #ececec 65%, transparent 65%)"
+                         src="images/surfboards/surfboard-2.png" alt="surfboard-2">
+                    <div class="whitespace-nowrap relative right-7 top-16">
+                        <span class="text-midgray text-xs tracking-[3px] uppercase">Surfboards</span>
+                        <h4 class="font-playfair text-xl">Emery NEM XF</h4>
+                        <div class="flex flex-col text-center pt-6">
+                            <span class="text-pink">$950</span>
+                            <a href="#" class="font-bold text-xs tracking-[3px] uppercase">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="surfboard-slider !flex items-center justify-center lg:justify-start">
+                    <img style="background: linear-gradient(to top, #ececec 65%, transparent 65%)"
+                         src="images/surfboards/surfboard-3.png" alt="surfboard-3">
+                    <div class="whitespace-nowrap relative right-7 top-16">
+                        <span class="text-midgray text-xs tracking-[3px] uppercase">Funboards</span>
+                        <h4 class="font-playfair text-xl">Agency GROM</h4>
+                        <div class="flex flex-col text-center pt-6">
+                            <span class="text-pink">$670</span>
+                            <a href="#" class="font-bold text-xs tracking-[3px] uppercase">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="surfboard-slider !flex items-center justify-center lg:justify-start">
+                    <img style="background: linear-gradient(to top, #ececec 65%, transparent 65%)"
+                         src="images/surfboards/surfboard-3.png" alt="surfboard-3">
+                    <div class="whitespace-nowrap relative right-7 top-16">
+                        <span class="text-midgray text-xs tracking-[3px] uppercase">Funboards</span>
+                        <h4 class="font-playfair text-xl">Agency GROM</h4>
+                        <div class="flex flex-col text-center pt-6">
+                            <span class="text-pink">$670</span>
+                            <a href="#" class="font-bold text-xs tracking-[3px] uppercase">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto text-center mt-12 lg:mt-24">
+            <a href="#" class="py-2 uppercase text-xs tracking-[4px] font-bold border-b-2 border-lightblue">show
+                all</a>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="flex-col w-full">
+        <div class="px-12 lg:px-24">
+            <div class="flex flex-col lg:flex-row justify-center  space-y-10 lg:space-y-0 lg:space-x-10 mb-12 lg:mb-24">
+                <div>
+                    <div class="relative self-start">
+                        <span class="text-light text-9xl tracking-[5px] font-bold">01</span>
+                        <h3 class="absolute z-10 font-bold font-playfair text-4xl text-darkgray bottom-2 whitespace-nowrap">
+                            Surf Training</h3>
+                        <div class="h-0.5 w-5 bg-lightblue"></div>
+                    </div>
+                    <p class="text-lightgray max-w-xs pt-6 pb-12">
+                        By better understanding the various aspects of surfing, By better understanding the various
+                        aspects of surfing, you will improve faster and have more fun in the water.
+                    </p>
+                    <a href="#" class="py-2 uppercase text-xs tracking-[4px] font-bold border-b-2 border-lightblue">read
+                        more</a>
+                </div>
+                <div class="relative self-start">
+                    <img src="images/img-3.png" alt="image 3">
+                    <span class="absolute left-full ml-4 top-0 text-xs tracking-[4px] uppercase text-lightgray rotate-180 [writing-mode:vertical-rl]">Surf Camps</span>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-center lg:justify-evenly w-3/4 mx-auto space-y-10 lg:space-y-0 lg:space-x-10">
+                <div class="relative order-2 lg:order-1">
+                    <img src="images/img-4.png" alt="image 4">
+                    <span class="absolute right-full mr-4 top-0 text-xs tracking-[4px] uppercase text-lightgray rotate-180 [writing-mode:vertical-rl]">Surf Camps</span>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="relative self-start">
+                        <span class="text-light text-9xl tracking-[5px] font-bold">02</span>
+                        <h3 class="absolute z-10 font-bold font-playfair text-4xl text-darkgray bottom-2 whitespace-nowrap">
+                            Point Break</h3>
+                        <div class="h-0.5 w-5 bg-lightblue"></div>
+                    </div>
+                    <p class="text-lightgray max-w-xs pt-6 pb-12">
+                        By better understanding the various aspects of By better understanding the various aspects of
+                        surfing, By better understanding the various aspects of surfing, you will improve faster and
+                        have more fun in the water.
+                    </p>
+                    <a href="#" class="py-2 uppercase text-xs tracking-[4px] font-bold border-b-2 border-lightblue">read
+                        more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Contact form -->
+        <div class="flex flex-col px-5 pt-12 lg:pt-24 pb-44 w-full mx-auto"
+             style="background: linear-gradient(#fff 3%, transparent 15%, transparent 90%, #fff 97%), url('images/backgrounds/bg-2.png') no-repeat center 40% / cover">
+            <div class="w-0.5 h-24 bg-lightblue mx-auto mb-20"></div>
+            <h3 class="text-4xl text-darkgray text-center font-playfair font-bold tracking-[2px]">Join the Club</h3>
+            <div class="max-w-lg mx-auto">
+                <p class="text-center py-6 text-lightgray">
+                    By better understanding the various aspects of surfing, you will improve faster
+                    and have more fun in the water.
+                </p>
+                <form action="#">
+                    <div class="flex">
+                        <label for="email"></label>
+                        <input id="email" placeholder="YOUR E-MAIL" type="text"
+                               class="placeholder:text-darkgray placeholder:text-xs placeholder:font-bold placeholder:tracking-[4px] w-full py-2 px-5 outline-0 shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1)] bg-light">
+                        <button type="submit" class="bg-lightblue w-12 h-12">
+                            <img src="images/button-arrow.png" alt="" class="mx-auto">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container flex flex-col sm:flex-row sm:space-x-10 items-center">
+        <div>
+            <img src="images/img-5.png" alt="">
+        </div>
+        <div class="my-5">
+            <span class="text-xs tracking-[4px] uppercase text-lightgray">
+                Our Camp
+            </span>
+            <h3 class="md:ml-16 py-6 lg:py-12 max-w-xs text-xl md:text-3xl text-darkgray font-playfair font-bold tracking-[2px]">
+                CA 91932, USA
+                Imperial Beach
+                560 Silver Strand Blvd
+            </h3>
+            <a href="#"
+               class="text-lightblue py-2 uppercase text-xs tracking-[4px] font-bold border-b-2 border-lightblue">Get in
+                Touch</a>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="py-24">
+    <div class="container flex flex-col items-center w-full space-y-8 mx-auto">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/logo.png" alt="surfing-logo">
+        </div>
+        <div class="items-center md:space-x-8 uppercase flex flex-col md:flex-row text-[.7em] font-semibold font-league">
+            <a href="#stories" class="p-4 tracking-[5px] duration-200 hover:text-midgray">stories</a>
+            <a href="#events" class="p-4 tracking-[5px] duration-200 hover:text-midgray">events</a>
+            <a href="#places" class="p-4 tracking-[5px] duration-200 hover:text-midgray">places</a>
+            <a href="#boards" class="p-4 tracking-[5px] duration-200 hover:text-midgray">boards</a>
+        </div>
+        <div class="flex space-x-6 items-center">
+            <a href="#" target="_blank"><img src="images/social-icons/tumblr.png" alt="tumblr"></a>
+            <a href="#" target="_blank"><img src="images/social-icons/twitter.png" alt="twitter"></a>
+            <a href="#" target="_blank"><img src="images/social-icons/vimeo.png" alt="vimeo"></a>
+        </div>
+    </div>
+</footer>
+
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="plugins/slick/slick.min.js"></script>
+<script src="js/script.js" async></script>
+</body>
+</html>
