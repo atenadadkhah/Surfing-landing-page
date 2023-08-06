@@ -12,7 +12,10 @@ This repository contains a modern and beautiful landing page about surfing, buil
 - Smooth Transitions: The landing page features smooth transitions and animations, enhancing user engagement and interactivity.
 
 ## Preview 
+[Surfing Landing Preview](https://atenadadkhah.github.io/Surfing-landing-page/)
 
 ## License
 This project is licensed under the MIT License.
+
+Happy surfing! 🏄‍♀️🌊
 
