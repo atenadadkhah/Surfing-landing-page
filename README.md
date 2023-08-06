@@ -14,8 +14,9 @@ This repository contains a modern and beautiful landing page about surfing, buil
 ## Preview 
 [Surfing Landing Preview](https://atenadadkhah.github.io/Surfing-landing-page/)
 
+Happy surfing! 🏄‍♀️🌊
+
 ## License
 This project is licensed under the MIT License.
 
-Happy surfing! 🏄‍♀️🌊
 
